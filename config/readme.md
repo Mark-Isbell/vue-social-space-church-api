@@ -1,12 +1,15 @@
 # the config folder is necessary for the back-end api server to run
-# it should contain three files:
+it should contain three files:
+
 dev.env
+
 test.env
+
 prod.env
 
 # Note: Any database compatible with Sequelize ORM can be used - Postgres versions 12-14 were used during development
 
-# Sample content for a typical prod.env file (remove the #s)
+# Sample content for a typical prod.env file 
 
  NODE_ENV=production
  
@@ -40,7 +43,8 @@ prod.env
 
 
 
-# Sample content for a typical dev.env file (remove the #s)
+# Sample content for a typical dev.env file 
+
 NODE_ENV=dev
 
 PORT=5000
