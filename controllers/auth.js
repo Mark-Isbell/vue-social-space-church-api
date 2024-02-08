@@ -234,16 +234,12 @@ exports.registerMember = asyncHandler(async (req, res, next) => {
 
     const message = `You are receiving this email because you need to confirm your email address. Please make a GET request to: \n\n ${myconfirmEmailURL}`;
   
-  // only send email if the environment is test or production
-    if (!process.env.NODE_ENV === "dev")
-    {
       const sendResult = await sendEmail({
         email: member.email,
         subject: 'Email Confirmation Link',
         message,
       });
-    } 
-
+    
     sendTokenResponse(member, 200, res);
   });
 
@@ -265,17 +261,15 @@ exports.resendEmail = asyncHandler(async (req, res, next) => {
 
     const message = `You are receiving this email because you need to confirm your email address. Please make a GET request to: \n\n ${myconfirmEmailURL}`;
   
-  // only send email if the environment is test or production
     let sendResult = null;
-    if (!process.env.NODE_ENV === "dev")
-    {
-        devLog("about to trigger sendEmail within resend Email block");
-        sendResult = await sendEmail({
-        email: req.member.email,
-        subject: 'Email Confirmation Link',
-        message,
-      });
-    } 
+    
+      devLog("about to trigger sendEmail within resend Email block");
+      sendResult = await sendEmail({
+      email: req.member.email,
+      subject: 'Email Confirmation Link',
+      message,
+    });
+    
     devLog("sendResult: " + JSON.stringify(sendResult)); 
     res.status(200).json({
       success: true,

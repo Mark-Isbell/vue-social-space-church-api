@@ -1,0 +1,2 @@
+[31mEnvironment: prod[39m
+[1m[33mServer running in production mode on port 5000[39m[22m
