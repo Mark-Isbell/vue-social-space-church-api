@@ -2,6 +2,8 @@
 
 > Backend API for the vue-social-space-church application
 
+Demonstration Implementation: https://vue-social-space-church.org
+
 Front end code is here: https://github.com/Mark-Isbell/vue-social-space-church
 
 ## Usage
